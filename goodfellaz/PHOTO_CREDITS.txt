@@ -1,0 +1,6 @@
+Photo sources (stock, not owner-provided):
+- tools.jpg — Unsplash, photo-1585747860715-2ba37e788b70 (barbershop interior). Unsplash License. Used as the hero so the page does not show other shops' staff or branding.
+- razor.jpg — StockSnap, "Barber Razor" by Nick Demou, https://stocksnap.io/photo/barber-razor-06HGN8LMUX (CC0).
+- scissors.jpg — StockSnap, "Barbershop Scissors" by Nick Demou, https://stocksnap.io/photo/barbershop-scissors-R9YRHH2JQY (CC0).
+Unused/rejected (wrong staff, other-shop branding, or not a barbershop): hero.jpg, hero-shop.jpg, cut.jpg, fade.jpg, salon.jpg, brush.jpg.
+No owner-provided photos were obtained from Facebook or The Cut.
