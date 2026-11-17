@@ -1,0 +1,5 @@
+Photo sources (stock, not owner-provided):
+- hero.jpg — Unsplash, photo-1619642751034-765dfdf7c58e (mechanic's hands with a wrench in an engine bay), https://unsplash.com/photos/hands-working-on-car-engine-Fd6osyVbtG4. Unsplash License (free to use; no Unsplash+ images).
+- engine.jpg — Unsplash, photo-1771340012378-3c86cb649193 (mechanic inspecting an engine), https://unsplash.com/photos/mechanic-inspecting-a-car-engine-with-hood-open-erWc6mrOq_I. Unsplash License (free to use; no Unsplash+ images).
+- sockets.jpg — Unsplash, photo-1602267774924-38124c047174 (socket set and shop rag), https://unsplash.com/photos/yellow-textile-on-red-and-black-plastic-crate-e6Wr8LaH-Q8. Unsplash License (free to use; no Unsplash+ images).
+No owner-provided photos were obtained from Facebook or other listings. The engine close-up used on the M C Automotive demo was deliberately not reused.
