@@ -71,3 +71,24 @@ h2{font-family:"Oswald",system-ui,sans-serif;font-size:clamp(2rem,4vw,3rem);marg
 @media (max-width:860px){
   .header-cta{display:inline-flex;padding:.7rem 1rem;font-size:.78rem}
 }
+
+/* Prebuilt Site checkout */
+.checkout{background:#fff;border-top:1px solid var(--line)}
+.checkout-from{margin:0 0 .8rem;color:var(--steel);font-size:.95rem}
+.checkout-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.checkout-card{border-top:4px solid var(--amber);background:var(--paper);padding:26px 22px;display:flex;flex-direction:column}
+.checkout-card-yearly{background:var(--navy);color:#fff;border-top-color:var(--amber-2)}
+.checkout-card-yearly .checkout-kicker{color:var(--amber-2)}
+.checkout-card-yearly h3,.checkout-card-yearly .checkout-price{color:#fff}
+.checkout-card-yearly p,.checkout-card-yearly .checkout-price span{color:rgba(255,255,255,.78)}
+.checkout-kicker{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#8a5a10;margin:0 0 .4rem;font-weight:700}
+.checkout-card h3{font-family:"Oswald",system-ui,sans-serif;margin:0 0 .35rem;text-transform:uppercase;letter-spacing:.04em}
+.checkout-price{font-family:"Oswald",system-ui,sans-serif;font-size:2.2rem;margin:0 0 .7rem;line-height:1.1;letter-spacing:.03em;color:var(--ink)}
+.checkout-price span{font-family:"Source Sans 3",system-ui,sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--steel)}
+.checkout-card p{margin:0;color:var(--steel)}
+.checkout-card .btn{margin-top:1.15rem;align-self:flex-start}
+.checkout-notes{margin-top:28px}
+.checkout-notes p{margin:0 0 .35rem;color:var(--steel);font-size:.9rem}
+@media (max-width:860px){
+  .checkout-cards{grid-template-columns:1fr}
+}
