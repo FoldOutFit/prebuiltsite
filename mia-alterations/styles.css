@@ -108,8 +108,8 @@ h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;font-size:clam
 .checkout-card-yearly{border-color:var(--gold);box-shadow:var(--shadow)}
 .checkout-kicker{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--wine);margin:0 0 .35rem}
 .checkout-card h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.55rem;font-weight:600;margin:0 0 .35rem}
-.checkout-price{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.1rem;font-weight:600;margin:0 0 .7rem;line-height:1.1;color:var(--ink)}
-.checkout-price span{font-family:"Outfit",system-ui,sans-serif;font-size:.88rem;font-weight:400;color:var(--ink-soft);letter-spacing:0}
+.checkout-card .checkout-price{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.1rem;font-weight:600;margin:0 0 .7rem;line-height:1.1;color:var(--ink)}
+.checkout-card .checkout-price span{font-family:"Outfit",system-ui,sans-serif;font-size:.88rem;font-weight:400;color:var(--ink-soft);letter-spacing:0}
 .checkout-card p{margin:0;color:var(--ink-soft)}
 .checkout-card .btn{margin-top:1.15rem;align-self:flex-start}
 .checkout-notes{margin-top:28px}
