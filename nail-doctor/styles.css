@@ -1,0 +1,73 @@
+
+:root{
+  --blush:#f7eef0;
+  --paper:#fffafb;
+  --rose:#8c3a4a;
+  --rose-deep:#6e2c39;
+  --ink:#2b2224;
+  --muted:#6e5d61;
+  --gold:#b08968;
+  --line:rgba(43,34,36,.1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--blush);color:var(--ink);font-family:"Jost",system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--rose)}
+.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(247,238,240,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:74px;gap:16px}
+.brand{text-decoration:none;color:var(--ink);text-align:center}
+.brand strong{display:block;font-family:"Italiana",Georgia,serif;font-size:1.65rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase}
+.brand span{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;align-items:center;gap:20px}
+nav a{text-decoration:none;color:var(--ink);font-size:.92rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;padding:.85rem 1.25rem;border-radius:999px;font-weight:500}
+.btn-primary{background:var(--rose);color:#fff}
+.btn-primary:hover{background:var(--rose-deep);color:#fff}
+.btn-ghost{border:1px solid rgba(43,34,36,.2);color:var(--ink);background:#fff}
+.hero{padding:72px 0 40px}
+.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.hero h1{font-family:"Italiana",Georgia,serif;font-weight:400;font-size:clamp(3rem,6vw,4.8rem);letter-spacing:.04em;line-height:1;margin:.4rem 0 1rem;text-transform:uppercase}
+.eyebrow{letter-spacing:.2em;text-transform:uppercase;color:var(--rose);font-size:.78rem;margin:0}
+.hero p{color:var(--muted);font-size:1.08rem}
+.hero img{width:100%;height:560px;object-fit:cover;border-radius:24px 24px 80px 24px;box-shadow:0 24px 50px rgba(43,34,36,.12)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:1.4rem}
+section{padding:80px 0}
+.section-label{letter-spacing:.2em;text-transform:uppercase;color:var(--rose);font-size:.75rem;margin:0 0 .4rem}
+h2{font-family:"Italiana",Georgia,serif;font-weight:400;font-size:clamp(2rem,4vw,3rem);letter-spacing:.06em;text-transform:uppercase;margin:0 0 1rem}
+.lede{color:var(--muted);max-width:38rem}
+.services{background:var(--paper)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px}
+.card{background:var(--blush);padding:24px;border-radius:18px}
+.card h3{margin:0 0 .4rem;font-size:1.15rem}
+.card p{margin:0;color:var(--muted)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.pair img{width:100%;height:380px;object-fit:cover;border-radius:18px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.review{background:#fff;padding:26px;border-radius:18px;border:1px solid var(--line)}
+.review blockquote{margin:0 0 1rem;font-size:1.05rem}
+.stars{color:var(--gold);margin:0 0 .6rem}
+.cite{margin:0;color:var(--muted);font-size:.86rem}
+.visit{background:var(--rose-deep);color:#fff}
+.visit .section-label,.visit .lede,.visit a{color:#f3d5d8}
+.visit h2{color:#fff}
+.visit-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:32px;margin-top:28px}
+.hours{list-style:none;padding:0;margin:0 0 1rem}
+.hours li{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.15);padding:.45rem 0}
+.btn-light{background:#fff;color:var(--rose-deep)}
+.map{width:100%;min-height:380px;border:0;border-radius:18px}
+.site-footer{padding:28px 0 36px;text-align:center;color:var(--muted);font-size:.82rem}
+.note{font-size:.9rem;color:var(--muted);margin-top:1.2rem}
+@media (max-width:860px){
+  nav{display:none}
+  .hero-grid,.cards,.reviews-grid,.visit-grid,.pair{grid-template-columns:1fr}
+  .hero img,.pair img{height:320px}
+  .hero{padding:36px 0}
+  .brand{text-align:left}
+}
+
+.header-cta{display:none}
+@media (max-width:860px){
+  .header-cta{display:inline-flex;padding:.7rem 1rem;font-size:.8rem}
+}
