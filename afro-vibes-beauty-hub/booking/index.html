@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Book an Appointment | Afro Vibes Beauty Hub, Philadelphia</title>
+  <meta name="description" content="Book braids, twists, locs, wig installs and more at Afro Vibes Beauty Hub, 8030 Frankford Ave, Philadelphia. See real-time availability and book online in a minute.">
+  <meta name="theme-color" content="#9e3b52">
+  <link rel="preconnect" href="https://afro-vibes-booking.wtdaisey.workers.dev" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to booking</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../">
+        <strong>Afro Vibes Beauty Hub</strong>
+        <em>Hair Salon</em>
+      </a>
+      <nav aria-label="Primary">
+        <a href="../#about">The salon</a>
+        <a href="../#services">Services</a>
+        <a href="../#reviews">Reviews</a>
+        <a href="../#visit">Hours</a>
+        <a href="../booking/" aria-current="page">Book online</a>
+        <a class="btn btn-primary" href="tel:+12155589643">Call the salon</a>
+      </nav>
+      <a class="btn btn-primary header-cta" href="tel:+12155589643">Call</a>
+    </div>
+  </header>
+
+  <section class="book-hero" style="padding-top:56px">
+    <div class="wrap">
+      <p class="eyebrow">Online booking</p>
+      <h1>Book your appointment</h1>
+      <p>Choose your style, pick a time that works, and you're set. Braids, twists, locs, crochet, wigs and care, at 8030 Frankford Ave.</p>
+      <ul class="trust"><li>Real-time availability</li><li>Instant confirmation</li><li>Free to reschedule or cancel 24 hrs ahead</li><li>No payment online</li></ul>
+    </div>
+  </section>
+
+  <main id="main" class="book-section">
+    <div class="wrap">
+      <div id="saved"></div>
+      <div class="book-grid" id="book-main">
+        <div>
+        <section class="step" id="step-service" data-hint="Prices are starting prices" aria-labelledby="step-service-t" style="padding:0">
+          <div class="step-head"><span class="step-num" aria-hidden="true">1</span><h2 class="step-title" id="step-service-t" style="font-family:inherit;font-size:1.05rem;font-weight:600;margin:0">Choose a service<small>Prices are starting prices</small></h2><button type="button" class="step-edit" hidden>Change<span class="sr-only"> choose a service</span></button></div>
+          <div class="step-body">
+            <div class="cat-tabs" id="cat-tabs" role="group" aria-label="Service categories"></div>
+            <div class="svc-list" id="svc-list"><p class="loading"><span class="spinner"></span>Loading services…</p></div>
+          </div>
+        </section>
+        <section class="step locked" id="step-stylist" data-hint="Optional — any available stylist is fine" aria-labelledby="step-stylist-t" style="padding:0">
+          <div class="step-head"><span class="step-num" aria-hidden="true">2</span><h2 class="step-title" id="step-stylist-t" style="font-family:inherit;font-size:1.05rem;font-weight:600;margin:0">Choose a stylist<small>Optional — any available stylist is fine</small></h2><button type="button" class="step-edit" hidden>Change<span class="sr-only"> choose a stylist</span></button></div>
+          <div class="step-body">
+            <div class="stylists" id="stylists" role="group" aria-label="Stylists"></div>
+            <div class="actions"><button type="button" class="btn btn-primary" id="stylist-continue">Continue</button></div>
+          </div>
+        </section>
+        <section class="step locked" id="step-time" data-hint="Open Tuesday–Sunday, 9 AM–7 PM" aria-labelledby="step-time-t" style="padding:0">
+          <div class="step-head"><span class="step-num" aria-hidden="true">3</span><h2 class="step-title" id="step-time-t" style="font-family:inherit;font-size:1.05rem;font-weight:600;margin:0">Pick a date &amp; time<small>Open Tuesday–Sunday, 9 AM–7 PM</small></h2><button type="button" class="step-edit" hidden>Change<span class="sr-only"> pick a date &amp; time</span></button></div>
+          <div class="step-body">
+            <div id="picker"></div>
+          </div>
+        </section>
+        <section class="step locked" id="step-details" data-hint="So we can confirm and reach you" aria-labelledby="step-details-t" style="padding:0">
+          <div class="step-head"><span class="step-num" aria-hidden="true">4</span><h2 class="step-title" id="step-details-t" style="font-family:inherit;font-size:1.05rem;font-weight:600;margin:0">Your details<small>So we can confirm and reach you</small></h2><button type="button" class="step-edit" hidden>Change<span class="sr-only"> your details</span></button></div>
+          <div class="step-body">
+            <form id="details-form" novalidate>
+              <div class="form-grid">
+                <div class="field"><label for="f-name">Full name</label><input id="f-name" name="name" autocomplete="name" required minlength="2" maxlength="80"></div>
+                <div class="field"><label for="f-phone">Mobile phone</label><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required pattern="[0-9()+.\s-]{10,20}" placeholder="(215) 555-0123"></div>
+                <div class="field full"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"></div>
+                <div class="field full"><label for="f-notes">Notes <span>(optional)</span></label><textarea id="f-notes" name="notes" maxlength="600" placeholder="Length, color, hair you're bringing, first visit, etc."></textarea></div>
+              </div>
+              <div class="hp" aria-hidden="true"><label for="f-website">Leave this empty</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+              <p class="consent">By booking you agree to the salon policies below. Your details are only used for this appointment.</p>
+              <p class="alert alert-error" id="form-error" role="alert" hidden></p>
+              <div class="actions"><button type="submit" class="btn btn-primary" id="confirm-btn" disabled>Confirm booking</button></div>
+            </form>
+          </div>
+        </section>
+        </div>
+        <aside class="summary" aria-label="Booking summary">
+          <h2>Your booking</h2>
+          <ul class="sum-list" id="sum-list"></ul>
+          <div class="sum-total"><span>Price</span><strong id="sum-price">—</strong></div>
+          <p class="hint">Pay at the salon. Final price depends on length and hair used.</p>
+          <div class="side-info">
+            <p><strong>Afro Vibes Beauty Hub</strong></p>
+            <p>8030 Frankford Ave, Philadelphia, PA 19136</p>
+            <p>Tue–Sun 9 AM–7 PM · Closed Mon</p>
+            <p><a href="tel:+12155589643">(215) 558-9643</a></p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <section class="policies" id="policies" aria-labelledby="pol-h">
+    <div class="wrap">
+      <p class="section-label">Good to know</p>
+      <h2 id="pol-h">Salon policies</h2>
+      <div class="policy-grid" id="policy-grid"></div>
+    </div>
+  </section>
+
+  <div class="mobile-bar" id="mobile-bar" hidden>
+    <div class="mb-info"><strong id="mb-title"></strong><span id="mb-sub"></span></div>
+    <button type="button" class="btn btn-primary" id="mb-btn">Continue</button>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">Afro Vibes Beauty Hub · 8030 Frankford Ave, Philadelphia, PA 19136 · <a href="tel:+12155589643">(215) 558-9643</a><br>Demo design by Prebuilt Site, preview available for 30 days.</div>
+  </footer>
+  <script src="booking.js" defer></script>
+</body>
+</html>

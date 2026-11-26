@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bookings admin | Afro Vibes Beauty Hub</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#9e3b52">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../booking.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../"><strong>Afro Vibes Beauty Hub</strong><em>Bookings admin</em></a>
+      <nav aria-label="Admin"><a href="../">Booking page</a><a href="../../">Website</a></nav>
+    </div>
+  </header>
+  <main class="admin-main" id="main">
+    <div class="wrap">
+      <form class="login" id="login" hidden>
+        <p class="section-label">Owner access</p>
+        <h1>Sign in</h1>
+        <p class="hint">Enter the admin password to see and manage bookings.</p>
+        <div class="field" style="margin-top:16px"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password" required></div>
+        <p class="alert alert-error" id="login-err" role="alert" hidden></p>
+        <div class="actions"><button class="btn btn-primary btn-block" type="submit">Sign in</button></div>
+      </form>
+
+      <div id="app" hidden>
+        <div class="stats" id="stats"></div>
+        <div class="toolbar">
+          <button type="button" class="btn btn-outline btn-sm" id="today">Today</button>
+          <button type="button" class="icon-btn" id="prev" aria-label="Previous">‹</button>
+          <button type="button" class="icon-btn" id="next" aria-label="Next">›</button>
+          <h1 id="title" aria-live="polite"></h1>
+          <div class="seg" role="group" aria-label="Calendar view">
+            <button type="button" data-view="day">Day</button><button type="button" data-view="week">Week</button><button type="button" data-view="month">Month</button>
+          </div>
+          <span class="spacer"></span>
+          <button type="button" class="btn btn-primary btn-sm" id="new-booking">+ Booking</button>
+          <button type="button" class="btn btn-outline btn-sm" id="new-block">Block time</button>
+          <button type="button" class="btn btn-outline btn-sm" id="feed-btn">Calendar feed</button>
+          <button type="button" class="btn btn-outline btn-sm" id="logout">Sign out</button>
+        </div>
+        <div class="legend" id="legend"></div>
+        <div class="cal-box" id="cal"></div>
+        <section class="agenda" style="padding:0" aria-labelledby="ag-h">
+          <h2 id="ag-h">Upcoming appointments</h2>
+          <div id="agenda"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <dialog id="dlg-booking" aria-labelledby="db-title"><div class="dlg" id="db-body"></div></dialog>
+
+  <dialog id="dlg-block" aria-labelledby="bl-title"><form class="dlg" id="block-form" method="dialog">
+    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <h2 id="bl-title">Block time off</h2>
+    <p class="hint">Blocked time can't be booked online. It also appears in your calendar feed.</p>
+    <div class="form-grid" style="margin-top:12px">
+      <div class="field"><label for="bl-date">Start date</label><input type="date" id="bl-date" required></div>
+      <div class="field"><label for="bl-days">Number of days</label><input type="number" id="bl-days" min="1" max="31" value="1"></div>
+      <div class="field full"><label class="check"><input type="checkbox" id="bl-all" checked> All day</label></div>
+      <div class="field bl-times"><label for="bl-start">From</label><input type="time" id="bl-start" value="12:00" step="900"></div>
+      <div class="field bl-times"><label for="bl-end">To</label><input type="time" id="bl-end" value="13:00" step="900"></div>
+      <div class="field full"><label for="bl-sty">Who</label><select id="bl-sty"></select></div>
+      <div class="field full"><label for="bl-reason">Reason <span>(optional, private)</span></label><input id="bl-reason" maxlength="120" placeholder="Holiday, lunch, training…"></div>
+    </div>
+    <p class="alert alert-error" id="bl-err" role="alert" hidden></p>
+    <div class="actions"><button class="btn btn-primary" type="submit">Block time</button><button class="btn btn-outline" type="button" data-close>Cancel</button></div>
+  </form></dialog>
+
+  <dialog id="dlg-new" aria-labelledby="nb-title"><form class="dlg" id="new-form" method="dialog">
+    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <h2 id="nb-title">Add a booking</h2>
+    <p class="hint">For phone or walk-in clients. Overlaps with other bookings are blocked.</p>
+    <div class="form-grid" style="margin-top:12px">
+      <div class="field full"><label for="nb-svc">Service</label><select id="nb-svc" required></select></div>
+      <div class="field"><label for="nb-sty">Stylist</label><select id="nb-sty"></select></div>
+      <div class="field"><label for="nb-date">Date</label><input type="date" id="nb-date" required></div>
+      <div class="field"><label for="nb-time">Start time</label><input type="time" id="nb-time" required step="900" value="10:00"></div>
+      <div class="field"><label for="nb-name">Client name</label><input id="nb-name" required maxlength="80"></div>
+      <div class="field"><label for="nb-phone">Phone <span>(optional)</span></label><input id="nb-phone" type="tel" maxlength="30"></div>
+      <div class="field"><label for="nb-email">Email <span>(optional)</span></label><input id="nb-email" type="email" maxlength="254"></div>
+      <div class="field full"><label for="nb-notes">Notes <span>(optional)</span></label><textarea id="nb-notes" maxlength="600"></textarea></div>
+    </div>
+    <p class="alert alert-error" id="nb-err" role="alert" hidden></p>
+    <div class="actions"><button class="btn btn-primary" type="submit">Add booking</button><button class="btn btn-outline" type="button" data-close>Cancel</button></div>
+  </form></dialog>
+
+  <dialog id="dlg-feed" aria-labelledby="fd-title"><div class="dlg">
+    <button class="x" type="button" data-close aria-label="Close">×</button>
+    <h2 id="fd-title">Subscribe in your calendar</h2>
+    <p class="hint">Add this private link to Google, Apple or Outlook Calendar and new bookings appear automatically. Keep it secret — anyone with the link can see your bookings.</p>
+    <div class="manage-link" style="margin:14px 0"><input readonly id="feed-url" aria-label="Private calendar feed URL"><button type="button" class="btn btn-outline" id="feed-copy">Copy</button></div>
+    <ul class="hint" style="padding-left:1.1rem">
+      <li><strong>Google Calendar:</strong> Other calendars → + → From URL → paste. (Google refreshes every few hours.)</li>
+      <li><strong>iPhone / Mac:</strong> <a id="feed-webcal" href="#">tap here to subscribe</a>, or Calendar → File → New Calendar Subscription.</li>
+      <li><strong>Outlook:</strong> Add calendar → Subscribe from web → paste.</li>
+    </ul>
+    <div class="actions"><button class="btn btn-primary" type="button" data-close>Done</button></div>
+  </div></dialog>
+
+  <script src="admin.js" defer></script>
+</body>
+</html>
